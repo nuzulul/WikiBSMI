@@ -258,7 +258,6 @@ PLATFORMS
 
 DEPENDENCIES
   github-pages
-  jekyll-gitlab-metadata
 
 BUNDLED WITH
    2.0.2
