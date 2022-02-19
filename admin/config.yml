@@ -1,0 +1,34 @@
+backend:
+  name: git-gateway
+  branch: main # Branch to update (optional; defaults to master)
+  repo: nuzulul/WikiBSMI
+  site_domain: "https://wikibsmi.netlify.app/admin"
+  identity_url: "https://wikibsmi.netlify.app/.netlify/identity"
+  gateway_url:  "https://wikibsmi.netlify.app/.netlify/git"
+  base_url: "https://wikibsmi.netlify.app"
+# This line should *not* be indented
+publish_mode: editorial_workflow
+# This line should *not* be indented
+media_folder: "uploads" # Media files will be stored in the repo under images/uploads
+collections:
+  - name: "post" # Used in routes, e.g., /admin/collections/blog
+    label: "Post" # Used in the UI
+    folder: "_posts" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    sort: "date:desc"
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    summary: "{{year}}/{{month}}/{{day}} {{hour}}:{{minute}}:{{second}} -- {{title}}"
+    fields: # The fields for each document, usually in front matter
+      - {label: "Layout", name: "layout", widget: "hidden", default: "post"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Category", name: "categories", widget: "list"}
+      - {label: "Tag", name: "tags", widget: "list"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Modified Date", name: "modified", widget: "datetime"}
+      - {label: "Featured Image", name: "thumbnail", widget: "image" , required: false}
+      - {label: "Rating (scale of 1-5)", name: "rating", widget: "number" , required: false}
+      - {label: "Comments", name: "comments", widget: "boolean", default: true}
+      - {label: "Published", name: "published", widget: "boolean", default: true}
+      - {label: "Body", name: "body", widget: "markdown"}
+site_url: https://wiki.bsmijatim.org/
+display_url: https://wiki.bsmijatim.org/
