@@ -52,6 +52,14 @@
   //$(document).ready(addDarkmodeWidget);
 </script>
 
+<script>
+if (window.location.href.indexOf("invite_token") > -1) {
+  var url = window.location.href;
+  var result = url.replace("wiki.bsmijatim.org","wiki.bsmijatim.org/admin");
+  window.location.replace(result);
+}
+</script>
+
 {% if site.inc_after_scripts %}
 {% include {{ site.inc_after_scripts }} %}
 {% endif %}
