@@ -1,0 +1,57 @@
+{% if site.inc_before_scripts %}
+{% include {{ site.inc_before_scripts }} %}
+{% endif %}
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Darkmode.js/1.5.7/darkmode-js.min.js" integrity="sha512-y61YvXQLQM3hubnG+D7IKUAaPlfwzjkNE5XdEZPzoxFXLeeS8TJQ4aUVmmHRrkk0OMz5FmZF1Fv88A79/W7mgw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+<script crossorigin='anonymous' integrity='sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==' referrerpolicy='no-referrer' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
+<script src="{{ '/assets/js/checkLinks.js' | relative_url }}"></script>
+<!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+<!-- dark mode -->
+<style>
+  body {
+    visibility: hidden;
+    opacity: 0;
+  }
+</style>
+<noscript>
+  <style>
+    body {
+      visibility: visible;
+      opacity: 1;
+    }
+  </style>
+</noscript>
+<script>
+  function darkModeSetBodyBg() {
+    if (localStorage.getItem('darkmode')==="true") {
+      console.log("darkmode activated");
+      document.body.style.backgroundColor = "black !important";
+    } else {
+      document.body.style.backgroundColor = ""; // reset background color
+    }
+  }
+
+  function addDarkmodeWidget() {
+
+    const options = {
+        label: '??', // default: ''
+        time: '0s'
+    }
+
+    new Darkmode(options).showWidget();
+
+    document.body.style.visibility = 'visible';
+    document.body.style.opacity = 1;
+  }
+
+  $(document).ready(addDarkmodeWidget);
+</script>
+
+{% if site.inc_after_scripts %}
+{% include {{ site.inc_after_scripts }} %}
+{% endif %}
