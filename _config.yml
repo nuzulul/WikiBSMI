@@ -21,14 +21,14 @@ show_wiki_posts: true
 show_wiki_posts_limit: 10
 # from jekyll (read jekyll doc)
 paginate: 5
-paginate_path: "/blog/page:num"
+paginate_path: "assets/blog/page:num"
 permalink: /blog/posts/:year/:month/:day/:title:output_ext
 # (boolean) Enable/disable download buttons in sidebar
 show_downloads: false
 # (string) Specify branch rendered by gitpages allowing wiki tool buttons to work
 git_branch: "main"
 # (string) Url of logo image, it can be full, absolute or relative.
-logo_url: https://1.bp.blogspot.com/-I9V1NyLtG68/XmJRZ_RhTJI/AAAAAAAADgI/wJiuL0Wnjvc2jyoV8AMRsIp1YvSQs1QXwCLcBGAsYHQ/s200/Logo%2BBSMI%2B%2528vector%2529.png
+logo_url: assets/logobsmi.png
 # (string) The UA-XXXXX-Y code from google analytic to enable GA on your wiki
 google_analytics: 
 # (string) folder where wiki pages are stored, it's needed for tool buttons
@@ -95,7 +95,7 @@ defaults:
       layout: "git-wiki-post"
  -
     scope:
-      path: blog
+      path: assets/blog
     values:
       layout: "git-wiki-blog"
 sass:
