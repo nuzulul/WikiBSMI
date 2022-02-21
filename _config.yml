@@ -101,23 +101,13 @@ defaults:
 sass:
     style: compressed
 plugins:
-  - jekyll-avatar
-  - jekyll-coffeescript
-  - jekyll-default-layout
-  - jekyll-feed
-  - jekyll-gist
-  - jekyll-paginate
-  - jekyll-mentions
-  - jekyll-optional-front-matter
-  - jekyll-readme-index
-  - jekyll-redirect-from
-  - jekyll-remote-theme
-  - jekyll-relative-links
-  - jekyll-seo-tag
-  - jekyll-sitemap
-  - jekyll-titles-from-headings
-  - jemoji
-  - jekyll-gitlab-metadata
+ - jekyll-feed
+ - jekyll-redirect-from
+ - jekyll-seo-tag
+ - jekyll-sitemap
+ - jekyll-avatar
+ - jemoji
+ - jekyll-mentions
 
 
 #
@@ -147,7 +137,7 @@ inc_after_tail :
 inc_before_tools : 
 inc_after_tools : 
 
-inc_before_page_list :
-inc_after_page_list : sidebar.html
+inc_before_page_list : sidebar.html
+inc_after_page_list :
 inc_before_post_list :
 inc_after_post_list :
